@@ -21,7 +21,14 @@ public class Brainrottify {
     public static List<BiFunction<String, String, String>> transformers = new ArrayList<>();
 
     public static void main(String[] args) {
+        transformers.add(
+            new Replacement(
+                "giga chad token",
+                "Giga Sigma Skibidi Hawk Tuah Rizz God Essence of the Skibidi Goated Hawk Tuah Sigma Lord"));
+        transformers.add(new Replacement("chad", "Chud"));
         transformers.add(new Replacement("toilet", "Skibidi Toilet"));
+        transformers.add(new Replacement("vibrant alloy", "PMO Vibes"));
+        transformers.add(new Replacement("energetic alloy", "Aura Ohio Rizz"));
         transformers.add(new Replacement("tungsten", "Tung Tung Tungsten Sahur"));
         transformers.add(new Replacement("combustion", "Goofy Ah Hawk Tuah"));
         transformers.add(new Replacement("gas", "Yung Vape"));
@@ -32,19 +39,18 @@ public class Brainrottify {
         transformers.add(new Replacement("salty", "Malding"));
         transformers.add(new Replacement("salt", "Mald"));
         transformers.add(new Replacement("heart", "Rizz"));
-        transformers.add(new Replacement("chrome", "Clankium"));
+        transformers.add(new Replacement("chrome", "Clank"));
+        transformers.add(new Replacement("kanthal", "Ohio Skibidi Tuah"));
         transformers.add(new Replacement("tpv-alloy", "Pink Lean"));
         transformers.add(new Replacement("hot", "Rizzed"));
         transformers.add(new Replacement("fluid", "Slop"));
+        transformers.add(new Replacement("emerald", "Money"));
         transformers.add(new Replacement("pipe", "Tube"));
         transformers.add(new Replacement("melon", "Cocomelon"));
         transformers.add(new Replacement("iron", "Gyatt Dog"));
         transformers.add(new Replacement("gold", "Stacked Skibidi Rizz"));
         transformers.add(new Replacement("extreme", "Maxed"));
         transformers.add(new Replacement("hss", "Huzz Sigma Skibidi"));
-        transformers.add(new Replacement("-g", "-Green"));
-        transformers.add(new Replacement("-s", "-Sussy"));
-        transformers.add(new Replacement("-e", "-Erm"));
         transformers.add(new Replacement("diamond", "Ultrainstinct Goku"));
         transformers.add(new Replacement("black", "Black-Pilled"));
         transformers.add(new Replacement("carbon", "Goku Black"));
@@ -56,10 +62,15 @@ public class Brainrottify {
         transformers.add(new Replacement("camera", "Palantir"));
         transformers.add(new Replacement("blast", "Boom"));
         transformers.add(new Replacement("pvc", "Flexible Skibidi"));
-        transformers.add(
-            new Replacement(
-                "giga chad token",
-                "Giga Sigma Skibidi Hawk Tuah Rizz God Essence of the Skibidi Goated Hawk Tuah Sigma Lord"));
+        transformers.add(new Replacement("nano", "Micro"));
+        transformers.add(new Replacement("jet", "Bombardiro Crocodilo"));
+        transformers.add(new Replacement("wire", "Winer"));
+        transformers.add(new Replacement("16x", "To The MOONx"));
+        transformers.add(new Replacement("clay", "Dream"));
+        transformers.add(new Replacement("brick", "Wardenelli Brickatoni"));
+        transformers.add(new Replacement("-g", "-Green"));
+        transformers.add(new Replacement("-s", "-Sussy"));
+        transformers.add(new Replacement("-e", "-Erm"));
 
         brainrot("langfiles/GregTech.lang", "src/main/resources/GregTech_gt_BR.lang");
         brainrot("langfiles/export.lang", "src/main/resources/assets/gtbr/lang/gt_BR.lang");
