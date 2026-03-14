@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.function.BiFunction;
 
+import com.github.bsideup.jabel.Desugar;
+
 /**
  * Automatically replaces specific tokens with brainrot
  */
@@ -123,6 +125,7 @@ public class Brainrottify {
         }
     }
 
+    @Desugar
     private record Replacement(String target, String result) implements BiFunction<String, String, String> {
 
         @Override
