@@ -25,7 +25,7 @@ public class Brainrottify {
         transformers.add(new Replacement("tungsten", "Tung Tung Tungsten Sahur"));
         transformers.add(new Replacement("combustion", "Goofy Ah Hawk Tuah"));
         transformers.add(new Replacement("gas", "Yung Vape"));
-        transformers.add(new Replacement("steam", "Old Vape"));
+        transformers.add(new Replacement("steam", "Unc Vape"));
         transformers.add(new Replacement("turbine", "Smoker"));
         transformers.add(new Replacement("generator", "Exploder"));
         transformers.add(new Replacement("field", "Grass"));
@@ -54,6 +54,8 @@ public class Brainrottify {
         transformers.add(new Replacement("electrotine", "Crystal Meth"));
         transformers.add(new Replacement("stargate", "Bussin' Portal"));
         transformers.add(new Replacement("camera", "Palantir"));
+        transformers.add(new Replacement("blast", "Boom"));
+        transformers.add(new Replacement("pvc", "Flexible Skibidi"));
         transformers.add(
             new Replacement(
                 "giga chad token",
