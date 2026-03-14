@@ -1,5 +1,7 @@
 package com.drathonix.gtbr;
 
+import java.io.File;
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -9,7 +11,12 @@ public class CommonProxy {
 
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
+    public static File root;
+
     public void preInit(FMLPreInitializationEvent event) {
+        root = event.getSuggestedConfigurationFile()
+            .getParentFile()
+            .getParentFile();
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
 
         GTBR.LOG.info("Installing BrainRot :tm: " + Tags.VERSION);

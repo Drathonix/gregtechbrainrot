@@ -1,5 +1,10 @@
 package com.drathonix.gtbr;
 
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,14 +14,37 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.relauncher.FMLLaunchHandler;
 
-@Mod(modid = GTBR.MODID, version = Tags.VERSION, name = "MyMod", acceptedMinecraftVersions = "[1.7.10]")
-public class gitGTBR {
+@Mod(
+    modid = GTBR.MODID,
+    version = Tags.VERSION,
+    name = "GregTech: Brainrot Horizons",
+    acceptedMinecraftVersions = "[1.7.10]",
+    acceptableRemoteVersions = "*")
+public class GTBR {
 
-    public static final String MODID = "mymodid";
+    public static final String MODID = "gregtechbrainrothorizons";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "com.myname.mymodid.ClientProxy", serverSide = "com.myname.mymodid.CommonProxy")
+    // This generates the GregTech lang file from the one we have in resources.
+    static {
+        if (FMLLaunchHandler.side()
+            .isClient()) {
+            File gregTechLangFile = new File(CommonProxy.root, "GregTech_gt_BR.lang");
+            if (!gregTechLangFile.exists()) {
+                InputStream stream = GTBR.class.getResourceAsStream("/GregTech_gt_BR.lang");
+                try {
+                    Files.copy(stream, gregTechLangFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    stream.close();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
+    @SidedProxy(clientSide = "com.drathonix.gtbr.ClientProxy", serverSide = "com.drathonix.gtbr.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler

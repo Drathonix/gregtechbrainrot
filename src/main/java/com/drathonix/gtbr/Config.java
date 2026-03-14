@@ -6,12 +6,16 @@ import net.minecraftforge.common.config.Configuration;
 
 public class Config {
 
-    public static String greeting = "Hello World";
+    public static boolean doExport = false;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
 
-        greeting = configuration.getString("greeting", Configuration.CATEGORY_GENERAL, greeting, "How shall I greet?");
+        doExport = configuration.getBoolean(
+            "export",
+            Configuration.CATEGORY_GENERAL,
+            doExport,
+            "Exports all of the translations in the modpack to export.lang when the language is changed");
 
         if (configuration.hasChanged()) {
             configuration.save();

@@ -1,0 +1,13 @@
+{
+  "language": {
+    "gt_BR": {
+      "name": "GregTech: Brainrot Horizons",
+      "region": "Skibidi Toilet",
+      "bidirectional": false
+    }
+  },
+  "pack": {
+    "description": "The GT Brainrot language",
+    "pack_format": 1
+  }
+}
